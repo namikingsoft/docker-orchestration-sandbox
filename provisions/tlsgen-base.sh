@@ -1,9 +1,9 @@
 #!/bin/bash -e
 
 # workdir
-mkdir keys && true
+rm -rf keys && true
+mkdir -p keys && true
 cd keys
-rm -rf * && true
 
 # ca cert
 openssl genrsa -out ca-key.pem 4096
