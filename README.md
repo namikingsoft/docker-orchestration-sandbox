@@ -1,8 +1,7 @@
-Build docker swarm over TLS using Terraform
+Sandbox of docker orchestration
 ==============================
 This is sample build docker swarm cluster over TLS using Terraform on DigitalOcean.
 
-Refs: [TLS認証なDocker Swarmクラスタを構築 (docker-machineなしで)](http://blog.namiking.net/post/2016/01/docker-swarm-build-using-tls/)
 
 Get Started
 ------------------------------
@@ -26,14 +25,14 @@ docker --tlsverify \
   --tlscacert=keys/ca.pem \
   --tlscert=keys/cert.pem \
   --tlskey=keys/key.pem \
-  -H=(ipv4_address of first host):3376 \
+  -H=(ipv4_address of first host):2376 \
   info
 ```
 or
 ```sh
 export DOCKER_TLS_VERIFY="1"
 export DOCKER_CERT_PATH="/path/to/keys"
-export DOCKER_HOST="(ipv4_address of first host):3376"
+export DOCKER_HOST="tcp://(ipv4_address of first host):3376"
 
 docker info
 ```
