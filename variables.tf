@@ -8,3 +8,7 @@ variable "gc_region" {}
 variable "aws_access_key" {}
 variable "aws_secret_key" {}
 variable "aws_default_region" {}
+
+provider "digitalocean" {
+  token = "${var.do_token}"
+}
